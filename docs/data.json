@@ -38,29 +38,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "js/bbcv/item/build.js": {
-            "name": "js/bbcv/item/build.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/bbcv/item/storage.js": {
-            "name": "js/bbcv/item/storage.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "js/bbcv/event-handlers.js": {
             "name": "js/bbcv/event-handlers.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/bbcv/item.js": {
-            "name": "js/bbcv/item.js",
             "modules": {},
             "classes": {},
             "fors": {},
@@ -328,102 +307,6 @@
             "submodule": "event-hanlders"
         },
         {
-            "file": "js/bbcv/item/build.js",
-            "line": 39,
-            "description": "Must return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item/build.js",
-            "line": 45,
-            "description": "Builds the itemvieW.",
-            "itemtype": "method",
-            "name": "buildItemView",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item/storage.js",
-            "line": 19,
-            "description": "Retrieves the view object at a given index.",
-            "itemtype": "method",
-            "name": "at",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item/storage.js",
-            "line": 29,
-            "description": "Removes the view from the 'byIndex' array\nAND invokes the view's 'remove' method.",
-            "itemtype": "method",
-            "name": "removeViewAt",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "return": {
-                "description": "promise [description]"
-            },
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item/storage.js",
-            "line": 51,
-            "description": "Retrieves the view for a given model/mcid",
-            "itemtype": "method",
-            "name": "getView",
-            "params": [
-                {
-                    "name": "mcid",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item/storage.js",
-            "line": 68,
-            "description": "Deletes the view for a given model/mcid from the byIndex hash.",
-            "itemtype": "method",
-            "name": "getView",
-            "params": [
-                {
-                    "name": "mcid",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
             "file": "js/bbcv/event-handlers.js",
             "line": 14,
             "description": "Handles add events on the collection.",
@@ -498,95 +381,6 @@
             "class": "",
             "module": "collection-dock",
             "submodule": "event-hanlders"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 19,
-            "description": "Retrieves the view object at a given index.",
-            "itemtype": "method",
-            "name": "at",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 29,
-            "description": "Removes the view from the 'byIndex' array\nAND invokes the view's 'remove' method.",
-            "itemtype": "method",
-            "name": "removeItemViewAt",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "return": {
-                "description": "promise [description]"
-            },
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 51,
-            "description": "Retrieves the view that represents a given model.\nDoes that by looking up for the model cid.",
-            "itemtype": "method",
-            "name": "getItemView",
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 67,
-            "description": "Deletes the view for a given model/mcid from the byIndex hash.",
-            "itemtype": "method",
-            "name": "getItemView",
-            "params": [
-                {
-                    "name": "mcid",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 113,
-            "description": "Must return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/bbcv/item.js",
-            "line": 119,
-            "description": "Builds the itemvieW.",
-            "itemtype": "method",
-            "name": "buildItemView",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
         },
         {
             "file": "js/bbcv/model-view.js",
@@ -711,7 +505,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 59,
+            "line": 68,
             "description": "The name of the event of the collection\nthat should trigger handleResort on the view.",
             "type": "{String}",
             "class": "",
@@ -724,20 +518,12 @@
             "line": " js/_bbcv-old/item/build.js:39"
         },
         {
-            "message": "Missing item type\nMust return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "line": " js/bbcv/item/build.js:39"
-        },
-        {
-            "message": "Missing item type\nMust return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "line": " js/bbcv/item.js:113"
-        },
-        {
             "message": "Missing item type\nPrivate method that adds the model $el to the dom.",
             "line": " js/bbcv/model-view.js:79"
         },
         {
             "message": "Missing item type\nThe name of the event of the collection\nthat should trigger handleResort on the view.",
-            "line": " js/bbcv.js:59"
+            "line": " js/bbcv.js:68"
         }
     ]
 }

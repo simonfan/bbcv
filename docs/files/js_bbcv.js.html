@@ -129,7 +129,16 @@ define(function (require, exports, module) {
 			options = options || {};
 
 			// set some options on instantiation
-			_.assign(this, _.pick(options, instantiationOptionNames));
+			_.each([
+				&#x27;resortEvent&#x27;,
+				&#x27;modelTemplate&#x27;,
+				&#x27;modelView&#x27;,
+				&#x27;collection&#x27;,
+			], function (opt) {
+
+				this[opt] = options[opt] || this[opt];
+
+			}, this);
 
 			// views by index
 			this.modelViews = [];
@@ -159,7 +168,7 @@ define(function (require, exports, module) {
 		 */
 		resortEvent: &#x27;resort&#x27;,
 
-		modelHtml: &#x27;&lt;div&gt;bb-collection-view item replace &quot;modelHtml&quot; property&lt;/div&gt;&#x27;,
+		modelTemplate: &#x27;&lt;div&gt;bb-collection-view item replace &quot;modelTemplate&quot; property&lt;/div&gt;&#x27;,
 		modelView: require(&#x27;bbmv&#x27;),
 	});
 

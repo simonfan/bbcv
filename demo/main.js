@@ -1,4 +1,5 @@
-define(['bbcv', 'jquery', 'backbone'], function (bbcv, $, Backbone) {
+define(['bbcv', 'jquery', 'backbone', 'bbmv'],
+function (bbcv,  $      ,  Backbone ,  bbmv ) {
 
 
 	var PersonModel = Backbone.Model.extend({
@@ -20,8 +21,14 @@ define(['bbcv', 'jquery', 'backbone'], function (bbcv, $, Backbone) {
 		collection   : collection,
 		modelTemplate: [
 			'<div class="row">',
-				'<div class="col-md-3" data-bind-name="html"></div>',
-				'<div class="col-md-3" data-bind-last-name="html"></div>',
+				'<div class="col-md-3">',
+					'<span data-bind-name="html"></span>',
+					'<input data-bind-name="value" data-bind-on="keyup">',
+				'</div>',
+				'<div class="col-md-3">',
+					'<span data-bind-last-name="html"></span>',
+					'<input data-bind-last-name="value" data-bind-on="keyup">',
+				'</div>',
 			'</div>'
 		].join(' ')
 	});
@@ -32,4 +39,24 @@ define(['bbcv', 'jquery', 'backbone'], function (bbcv, $, Backbone) {
 
 
 
+
+	// define a view for adder
+	var adderView = bbmv.extend({
+
+		addPerson: function addPerson() {
+			// use toJSON method to pass only attributes.
+			collection.add(this.model.toJSON());
+
+			// clear model
+			this.model.clear();
+		},
+	})
+
+
+	window.beingAddedModel = new Backbone.Model();
+
+	window.addv = adderView({
+		el: $('#adder'),
+		model: beingAddedModel
+	});
 });

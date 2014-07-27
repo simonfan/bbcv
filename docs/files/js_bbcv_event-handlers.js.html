@@ -116,7 +116,7 @@ define(function (require, exports, module) {
 	 */
 	exports.handleAdd = function handleAdd(model) {
 
-		this.buildItemView(model);
+		this.addModelView(model);
 	};
 
 	/**
@@ -127,7 +127,7 @@ define(function (require, exports, module) {
 	 * @param model {model Object}
 	 */
 	exports.handleRemove = function handleRemove(model) {
-		this.removeView(model);
+		this.removeModelView(model);
 	};
 
 	/**

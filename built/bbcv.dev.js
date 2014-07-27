@@ -66,7 +66,7 @@ define('bbcv/event-handlers',['require','exports','module','lodash','jquery'],fu
 	 */
 	exports.handleAdd = function handleAdd(model) {
 
-		this.buildItemView(model);
+		this.addModelView(model);
 	};
 
 	/**
@@ -77,7 +77,7 @@ define('bbcv/event-handlers',['require','exports','module','lodash','jquery'],fu
 	 * @param model {model Object}
 	 */
 	exports.handleRemove = function handleRemove(model) {
-		this.removeView(model);
+		this.removeModelView(model);
 	};
 
 	/**
@@ -198,7 +198,7 @@ define('bbcv/model-view',['require','exports','module','lodash'],function (requi
 	 */
 	function _modelElAdd($el, index, cview) {
 		// get the view that represents the model before cview one.
-		var viewBefore = cview.getViewAt(index - 1);
+		var viewBefore = cview.getModelViewAt(index - 1);
 
 		if (viewBefore) {
 			// if htere is a view before,
@@ -231,7 +231,7 @@ define('bbcv/model-view',['require','exports','module','lodash'],function (requi
 		var index = this.collection.indexOf(model);
 
 		// [3] place
-		_modelElAdd(this, index, $el);
+		_modelElAdd($el, index, this);
 
 		// [4] build the view
 		// [4.1] build view options
@@ -290,7 +290,16 @@ define('bbcv',['require','exports','module','lowercase-backbone','bbmv','bbcv/it
 			options = options || {};
 
 			// set some options on instantiation
-			_.assign(this, _.pick(options, instantiationOptionNames));
+			_.each([
+				'resortEvent',
+				'modelTemplate',
+				'modelView',
+				'collection',
+			], function (opt) {
+
+				this[opt] = options[opt] || this[opt];
+
+			}, this);
 
 			// views by index
 			this.modelViews = [];
@@ -320,7 +329,7 @@ define('bbcv',['require','exports','module','lowercase-backbone','bbmv','bbcv/it
 		 */
 		resortEvent: 'resort',
 
-		modelHtml: '<div>bb-collection-view item replace "modelHtml" property</div>',
+		modelTemplate: '<div>bb-collection-view item replace "modelTemplate" property</div>',
 		modelView: require('bbmv'),
 	});
 

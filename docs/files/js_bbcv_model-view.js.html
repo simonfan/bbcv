@@ -181,7 +181,7 @@ define(function (require, exports, module) {
 	 */
 	function _modelElAdd($el, index, cview) {
 		// get the view that represents the model before cview one.
-		var viewBefore = cview.getViewAt(index - 1);
+		var viewBefore = cview.getModelViewAt(index - 1);
 
 		if (viewBefore) {
 			// if htere is a view before,
@@ -214,7 +214,7 @@ define(function (require, exports, module) {
 		var index = this.collection.indexOf(model);
 
 		// [3] place
-		_modelElAdd(this, index, $el);
+		_modelElAdd($el, index, this);
 
 		// [4] build the view
 		// [4.1] build view options
