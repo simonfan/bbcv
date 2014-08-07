@@ -18,12 +18,16 @@ function (bbcv,  $      ,  Backbone ,  bbmv ) {
 
 
 	var extendedBbcv = bbcv.extend({
-		collection   : collection,
-		modelTemplate: [
+		collection       : collection,
+
+	//	modelView        : bbmv,
+		modelHtmlTemplate: [
 			'<div class="row">',
 				'<div class="col-md-3">',
-					'<span data-bind-name="html"></span>',
-					'<input data-bind-name="value" data-bind-on="keyup">',
+					'<span data-bind-name="html">',
+						'<%= name %>',
+					'</span>',
+					'<input data-bind-name="value" value="<%= name %>" data-bind-on="keyup">',
 				'</div>',
 				'<div class="col-md-3">',
 					'<span data-bind-last-name="html"></span>',

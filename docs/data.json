@@ -4,24 +4,8 @@
         "version": "0.0.0"
     },
     "files": {
-        "js/_bbcv-old/item/build.js": {
-            "name": "js/_bbcv-old/item/build.js",
-            "modules": {
-                "item": 1
-            },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/_bbcv-old/item/storage.js": {
-            "name": "js/_bbcv-old/item/storage.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/_bbcv-old/event-handlers.js": {
-            "name": "js/_bbcv-old/event-handlers.js",
+        "js/bbcv/event-handlers.js": {
+            "name": "js/bbcv/event-handlers.js",
             "modules": {
                 "event-hanlders": 1
             },
@@ -29,8 +13,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "js/_bbcv-old/iterators.js": {
-            "name": "js/_bbcv-old/iterators.js",
+        "js/bbcv/iterators.js": {
+            "name": "js/bbcv/iterators.js",
             "modules": {
                 "proxy": 1
             },
@@ -38,23 +22,11 @@
             "fors": {},
             "namespaces": {}
         },
-        "js/bbcv/event-handlers.js": {
-            "name": "js/bbcv/event-handlers.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/bbcv/iterators.js": {
-            "name": "js/bbcv/iterators.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "js/bbcv/model-view.js": {
             "name": "js/bbcv/model-view.js",
-            "modules": {},
+            "modules": {
+                "item": 1
+            },
             "classes": {},
             "fors": {},
             "namespaces": {}
@@ -73,26 +45,13 @@
         "collection-dock": {
             "name": "collection-dock",
             "submodules": {
-                "item": 1,
                 "event-hanlders": 1,
-                "proxy": 1
+                "proxy": 1,
+                "item": 1
             },
             "classes": {},
             "fors": {},
             "namespaces": {}
-        },
-        "item": {
-            "name": "item",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "is_submodule": 1,
-            "namespaces": {},
-            "module": "collection-dock",
-            "namespace": "",
-            "file": "js/_bbcv-old/item/build.js",
-            "line": 1,
-            "description": "Defines methods that generate item-related templates and data.\nMethods here should be overwritten for custom behaviour."
         },
         "event-hanlders": {
             "name": "event-hanlders",
@@ -103,7 +62,7 @@
             "namespaces": {},
             "module": "collection-dock",
             "namespace": "",
-            "file": "js/_bbcv-old/event-handlers.js",
+            "file": "js/bbcv/event-handlers.js",
             "line": 1,
             "description": "Defines the event handler for 'add' events on the collection."
         },
@@ -116,9 +75,22 @@
             "namespaces": {},
             "module": "collection-dock",
             "namespace": "",
-            "file": "js/_bbcv-old/iterators.js",
+            "file": "js/bbcv/iterators.js",
             "line": 1,
             "description": "Proxies methods to the collection, if it is present."
+        },
+        "item": {
+            "name": "item",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "collection-dock",
+            "namespace": "",
+            "file": "js/bbcv/model-view.js",
+            "line": 1,
+            "description": "Defines methods that generate item-related templates and data.\nMethods here should be overwritten for custom behaviour."
         },
         "bbcv": {
             "name": "bbcv",
@@ -134,178 +106,6 @@
     },
     "classes": {},
     "classitems": [
-        {
-            "file": "js/_bbcv-old/item/build.js",
-            "line": 39,
-            "description": "Must return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/item/build.js",
-            "line": 45,
-            "description": "Builds the itemvieW.",
-            "itemtype": "method",
-            "name": "buildItemView",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/item/storage.js",
-            "line": 19,
-            "description": "Retrieves the view object at a given index.",
-            "itemtype": "method",
-            "name": "at",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/item/storage.js",
-            "line": 29,
-            "description": "Removes the view from the 'byIndex' array\nAND invokes the view's 'remove' method.",
-            "itemtype": "method",
-            "name": "removeViewAt",
-            "params": [
-                {
-                    "name": "index",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "return": {
-                "description": "promise [description]"
-            },
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/item/storage.js",
-            "line": 51,
-            "description": "Retrieves the view for a given model/mcid",
-            "itemtype": "method",
-            "name": "getView",
-            "params": [
-                {
-                    "name": "mcid",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/item/storage.js",
-            "line": 68,
-            "description": "Deletes the view for a given model/mcid from the byIndex hash.",
-            "itemtype": "method",
-            "name": "getView",
-            "params": [
-                {
-                    "name": "mcid",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "item"
-        },
-        {
-            "file": "js/_bbcv-old/event-handlers.js",
-            "line": 14,
-            "description": "Handles add events on the collection.",
-            "itemtype": "method",
-            "name": "handleAdd",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "model",
-                    "description": "",
-                    "type": "Model Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "event-hanlders"
-        },
-        {
-            "file": "js/_bbcv-old/event-handlers.js",
-            "line": 26,
-            "description": "Handles remove events on the collection.",
-            "itemtype": "method",
-            "name": "handleRemove",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "model",
-                    "description": "",
-                    "type": "Model Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "event-hanlders"
-        },
-        {
-            "file": "js/_bbcv-old/event-handlers.js",
-            "line": 37,
-            "description": "Handles reset events on the collection.",
-            "itemtype": "method",
-            "name": "handleReset",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "model",
-                    "description": "",
-                    "type": "Model Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "event-hanlders"
-        },
-        {
-            "file": "js/_bbcv-old/event-handlers.js",
-            "line": 55,
-            "description": "Handles resort events on the collection.",
-            "itemtype": "method",
-            "name": "handleResort",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "model",
-                    "description": "",
-                    "type": "Model Object"
-                }
-            ],
-            "class": "",
-            "module": "collection-dock",
-            "submodule": "event-hanlders"
-        },
         {
             "file": "js/bbcv/event-handlers.js",
             "line": 14,
@@ -472,7 +272,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 104,
+            "line": 102,
             "description": "Builds the itemvieW.",
             "itemtype": "method",
             "name": "addModelView",
@@ -505,25 +305,57 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 68,
+            "line": 88,
             "description": "The name of the event of the collection\nthat should trigger handleResort on the view.",
             "type": "{String}",
+            "class": "",
+            "module": "bbcv"
+        },
+        {
+            "file": "js/bbcv.js",
+            "line": 96,
+            "description": "The function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
+            "type": "{[type]}",
+            "class": "",
+            "module": "bbcv"
+        },
+        {
+            "file": "js/bbcv.js",
+            "line": 105,
+            "description": "The html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
+            "type": "{String}",
+            "class": "",
+            "module": "bbcv"
+        },
+        {
+            "file": "js/bbcv.js",
+            "line": 117,
+            "description": "String   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
+            "type": "{String|Function|Boolean}",
             "class": "",
             "module": "bbcv"
         }
     ],
     "warnings": [
         {
-            "message": "Missing item type\nMust return an view object with a 'remove' method.\nThe itemView is responsible for actions",
-            "line": " js/_bbcv-old/item/build.js:39"
-        },
-        {
             "message": "Missing item type\nPrivate method that adds the model $el to the dom.",
             "line": " js/bbcv/model-view.js:79"
         },
         {
             "message": "Missing item type\nThe name of the event of the collection\nthat should trigger handleResort on the view.",
-            "line": " js/bbcv.js:68"
+            "line": " js/bbcv.js:88"
+        },
+        {
+            "message": "Missing item type\nThe function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
+            "line": " js/bbcv.js:96"
+        },
+        {
+            "message": "Missing item type\nThe html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
+            "line": " js/bbcv.js:105"
+        },
+        {
+            "message": "Missing item type\nString   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
+            "line": " js/bbcv.js:117"
         }
     ]
 }

@@ -35,7 +35,8 @@ define(function (require, exports, module) {
 			// set some options on instantiation
 			_.each([
 				'resortEvent',
-				'modelTemplate',
+				'modelHtmlTemplate',
+				'modelHtml',
 				'modelView',
 				'collection',
 			], function (opt) {
@@ -43,6 +44,25 @@ define(function (require, exports, module) {
 				this[opt] = options[opt] || this[opt];
 
 			}, this);
+
+
+			// Compile template (if needed)
+			// and set it to the modelHtml property.
+			if (!this.modelHtml) {
+
+				// get template compiler
+				var compile = options.compileTemplate || this.compileTemplate;
+
+				// if no modelHtml is found, compile the template and set a function for modelHtml.
+				var compiled = _.isFunction(this.modelHtmlTemplate) ?
+					this.modelHtmlTemplate : compile(this.modelHtmlTemplate);
+
+				this.modelHtml = function renderModelHtml(model) {
+					return compiled(model.attributes);
+				}
+			}
+
+
 
 			// views by index
 			this.modelViews = [];
@@ -72,8 +92,37 @@ define(function (require, exports, module) {
 		 */
 		resortEvent: 'resort',
 
-		modelTemplate: '<div>bb-collection-view item replace "modelTemplate" property</div>',
-		modelView: require('bbmv'),
+
+		/**
+		 * The function that compiles the modelHtmlTemplate.
+		 * The default compiler is lodash's _.template.
+		 *
+		 * @type {[type]}
+		 */
+		compileTemplate: _.template,
+
+
+		/**
+		 * The html template.
+		 *
+		 * Function => The compiled template. Will be invoked with the model's
+		 * 			   ATTRIBUTES object (not with the model itself)
+		 * String   => The source format of the template.
+		 * 			   Will be compiled on bbcv initialization.
+		 *
+		 * @type {String}
+		 */
+		modelHtmlTemplate: '<div>bb-collection-view item replace "modelHtml" property</div>',
+
+		/**
+		 * String   => The html string that should be inserted for each model
+		 * Function => A function, that, given the MODEL, should return an html string
+		 * Boolean (false) => Indicates that no static html was defined, thus we need to
+		 * 					  check for modelHtmlTemplate instead
+		 * @type {String|Function|Boolean}
+		 */
+		modelHtml: false,
+		modelView: require('lowercase-backbone').view,
 	});
 
 	bbcv.assignProto(require('bbcv/iterators'))

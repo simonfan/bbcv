@@ -131,7 +131,8 @@ define(function (require, exports, module) {
 			// set some options on instantiation
 			_.each([
 				&#x27;resortEvent&#x27;,
-				&#x27;modelTemplate&#x27;,
+				&#x27;modelHtmlTemplate&#x27;,
+				&#x27;modelHtml&#x27;,
 				&#x27;modelView&#x27;,
 				&#x27;collection&#x27;,
 			], function (opt) {
@@ -139,6 +140,25 @@ define(function (require, exports, module) {
 				this[opt] = options[opt] || this[opt];
 
 			}, this);
+
+
+			// Compile template (if needed)
+			// and set it to the modelHtml property.
+			if (!this.modelHtml) {
+
+				// get template compiler
+				var compile = options.compileTemplate || this.compileTemplate;
+
+				// if no modelHtml is found, compile the template and set a function for modelHtml.
+				var compiled = _.isFunction(this.modelHtmlTemplate) ?
+					this.modelHtmlTemplate : compile(this.modelHtmlTemplate);
+
+				this.modelHtml = function renderModelHtml(model) {
+					return compiled(model.attributes);
+				}
+			}
+
+
 
 			// views by index
 			this.modelViews = [];
@@ -168,8 +188,37 @@ define(function (require, exports, module) {
 		 */
 		resortEvent: &#x27;resort&#x27;,
 
-		modelTemplate: &#x27;&lt;div&gt;bb-collection-view item replace &quot;modelTemplate&quot; property&lt;/div&gt;&#x27;,
-		modelView: require(&#x27;bbmv&#x27;),
+
+		/**
+		 * The function that compiles the modelHtmlTemplate.
+		 * The default compiler is lodash&#x27;s _.template.
+		 *
+		 * @type {[type]}
+		 */
+		compileTemplate: _.template,
+
+
+		/**
+		 * The html template.
+		 *
+		 * Function =&gt; The compiled template. Will be invoked with the model&#x27;s
+		 * 			   ATTRIBUTES object (not with the model itself)
+		 * String   =&gt; The source format of the template.
+		 * 			   Will be compiled on bbcv initialization.
+		 *
+		 * @type {String}
+		 */
+		modelHtmlTemplate: &#x27;&lt;div&gt;bb-collection-view item replace &quot;modelHtml&quot; property&lt;/div&gt;&#x27;,
+
+		/**
+		 * String   =&gt; The html string that should be inserted for each model
+		 * Function =&gt; A function, that, given the MODEL, should return an html string
+		 * Boolean (false) =&gt; Indicates that no static html was defined, thus we need to
+		 * 					  check for modelHtmlTemplate instead
+		 * @type {String|Function|Boolean}
+		 */
+		modelHtml: false,
+		modelView: require(&#x27;lowercase-backbone&#x27;).view,
 	});
 
 	bbcv.assignProto(require(&#x27;bbcv/iterators&#x27;))

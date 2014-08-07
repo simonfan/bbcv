@@ -99,8 +99,6 @@ define(function (require, exports, module) {
 		}
 	}
 
-
-
 	/**
 	 * Builds the itemvieW.
 	 *
@@ -111,7 +109,7 @@ define(function (require, exports, module) {
 
 		// [1] render the template
 		//     and get the $el.
-		var html = _.isFunction(this.modelTemplate) ? this.modelTemplate(model.attributes) : this.modelTemplate,
+		var html = _.isFunction(this.modelHtml) ? this.modelHtml(model) : this.modelHtml,
 			$el  = $(html);
 
 		// [2] get index
