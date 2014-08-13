@@ -1,7 +1,7 @@
 {
   "name": "bbcv",
   "main": "built/bbcv.js",
-  "version": "0.7.12",
+  "version": "0.7.13",
   "description": "Some module...",
   "dependencies": {
     "jquery": "~2.1.1",

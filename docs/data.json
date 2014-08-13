@@ -305,7 +305,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 94,
+            "line": 95,
             "description": "The name of the event of the collection\nthat should trigger handleResort on the view.",
             "type": "{String}",
             "class": "",
@@ -313,7 +313,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 102,
+            "line": 103,
             "description": "The function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
             "type": "{[type]}",
             "class": "",
@@ -321,7 +321,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 111,
+            "line": 112,
             "description": "The html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
             "type": "{String}",
             "class": "",
@@ -329,7 +329,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 123,
+            "line": 124,
             "description": "String   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
             "type": "{String|Function|Boolean}",
             "class": "",
@@ -343,19 +343,19 @@
         },
         {
             "message": "Missing item type\nThe name of the event of the collection\nthat should trigger handleResort on the view.",
-            "line": " js/bbcv.js:94"
+            "line": " js/bbcv.js:95"
         },
         {
             "message": "Missing item type\nThe function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
-            "line": " js/bbcv.js:102"
+            "line": " js/bbcv.js:103"
         },
         {
             "message": "Missing item type\nThe html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
-            "line": " js/bbcv.js:111"
+            "line": " js/bbcv.js:112"
         },
         {
             "message": "Missing item type\nString   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
-            "line": " js/bbcv.js:123"
+            "line": " js/bbcv.js:124"
         }
     ]
 }

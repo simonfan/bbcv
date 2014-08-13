@@ -296,6 +296,7 @@ define('bbcv',['require','exports','module','lowercase-backbone','lodash','lower
 				'modelHtml',
 				'modelView',
 				'collection',
+				'parseModelHtmlTemplateData',
 			], function (opt) {
 
 				this[opt] = options[opt] || this[opt];
