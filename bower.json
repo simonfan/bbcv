@@ -1,11 +1,11 @@
 {
   "name": "bbcv",
   "main": "built/bbcv.js",
-  "version": "0.7.11",
+  "version": "0.7.12",
   "description": "Some module...",
   "dependencies": {
     "jquery": "~2.1.1",
-    "lowercase-backbone": "~0.2.7",
+    "lowercase-backbone": "0.3.8",
     "lodash": "~2.4.1"
   },
   "devDependencies": {
@@ -19,6 +19,6 @@
     "bbmv": "~0.14.16"
   },
   "resolutions": {
-    "lowercase-backbone": "~0.3.7"
+    "lowercase-backbone": "0.3.8"
   }
 }

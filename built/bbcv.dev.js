@@ -315,7 +315,12 @@ define('bbcv',['require','exports','module','lowercase-backbone','lodash','lower
 					this.modelHtmlTemplate : compile(this.modelHtmlTemplate);
 
 				this.modelHtml = function renderModelHtml(model) {
-					return compiled(model.attributes);
+					// retrieve template data
+					var data = _.isFunction(this.parseModelHtmlTemplateData) ?
+						this.parseModelHtmlTemplateData(model) :
+						model.toJSON();
+
+					return compiled(data);
 				};
 			}
 

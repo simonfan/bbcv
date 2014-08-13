@@ -155,7 +155,12 @@ define(function (require, exports, module) {
 					this.modelHtmlTemplate : compile(this.modelHtmlTemplate);
 
 				this.modelHtml = function renderModelHtml(model) {
-					return compiled(model.attributes);
+					// retrieve template data
+					var data = _.isFunction(this.parseModelHtmlTemplateData) ?
+						this.parseModelHtmlTemplateData(model) :
+						model.toJSON();
+
+					return compiled(data);
 				};
 			}
 
