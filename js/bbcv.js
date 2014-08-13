@@ -11,7 +11,8 @@
 define(function (require, exports, module) {
 	'use strict';
 
-	var view = require('lowercase-backbone').view;
+	var view = require('lowercase-backbone').view,
+		_    = require('lodash');
 
 	var _init = view.prototype.initialize;
 
@@ -59,7 +60,7 @@ define(function (require, exports, module) {
 
 				this.modelHtml = function renderModelHtml(model) {
 					return compiled(model.attributes);
-				}
+				};
 			}
 
 

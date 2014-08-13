@@ -184,7 +184,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 14,
+            "line": 15,
             "description": "Retrieves the view object at a given index.",
             "itemtype": "method",
             "name": "at",
@@ -201,7 +201,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 25,
+            "line": 26,
             "description": "Retrieves the view that represents a given model.\nDoes that by looking up for the model cid.",
             "itemtype": "method",
             "name": "getModelView",
@@ -211,7 +211,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 44,
+            "line": 45,
             "description": "Removes the view from the 'modelViews' array\nAND invokes the view's 'remove' method.",
             "itemtype": "method",
             "name": "removeModelViewAt",
@@ -231,7 +231,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 61,
+            "line": 62,
             "description": "Deletes the view for a given model/mcid from the modelViews hash.",
             "itemtype": "method",
             "name": "getModelView",
@@ -248,7 +248,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 79,
+            "line": 80,
             "description": "Private method that adds the model $el to the dom.",
             "params": [
                 {
@@ -272,7 +272,7 @@
         },
         {
             "file": "js/bbcv/model-view.js",
-            "line": 102,
+            "line": 103,
             "description": "Builds the itemvieW.",
             "itemtype": "method",
             "name": "addModelView",
@@ -289,7 +289,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 25,
+            "line": 26,
             "description": "Initialization logic for collectionDock",
             "itemtype": "method",
             "name": "initializeCollectionView",
@@ -305,7 +305,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 88,
+            "line": 89,
             "description": "The name of the event of the collection\nthat should trigger handleResort on the view.",
             "type": "{String}",
             "class": "",
@@ -313,7 +313,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 96,
+            "line": 97,
             "description": "The function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
             "type": "{[type]}",
             "class": "",
@@ -321,7 +321,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 105,
+            "line": 106,
             "description": "The html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
             "type": "{String}",
             "class": "",
@@ -329,7 +329,7 @@
         },
         {
             "file": "js/bbcv.js",
-            "line": 117,
+            "line": 118,
             "description": "String   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
             "type": "{String|Function|Boolean}",
             "class": "",
@@ -339,23 +339,23 @@
     "warnings": [
         {
             "message": "Missing item type\nPrivate method that adds the model $el to the dom.",
-            "line": " js/bbcv/model-view.js:79"
+            "line": " js/bbcv/model-view.js:80"
         },
         {
             "message": "Missing item type\nThe name of the event of the collection\nthat should trigger handleResort on the view.",
-            "line": " js/bbcv.js:88"
+            "line": " js/bbcv.js:89"
         },
         {
             "message": "Missing item type\nThe function that compiles the modelHtmlTemplate.\nThe default compiler is lodash's _.template.",
-            "line": " js/bbcv.js:96"
+            "line": " js/bbcv.js:97"
         },
         {
             "message": "Missing item type\nThe html template.\n\nFunction => The compiled template. Will be invoked with the model's\n\t\t\t   ATTRIBUTES object (not with the model itself)\nString   => The source format of the template.\n\t\t\t   Will be compiled on bbcv initialization.",
-            "line": " js/bbcv.js:105"
+            "line": " js/bbcv.js:106"
         },
         {
             "message": "Missing item type\nString   => The html string that should be inserted for each model\nFunction => A function, that, given the MODEL, should return an html string\nBoolean (false) => Indicates that no static html was defined, thus we need to\n\t\t\t\t\t  check for modelHtmlTemplate instead",
-            "line": " js/bbcv.js:117"
+            "line": " js/bbcv.js:118"
         }
     ]
 }

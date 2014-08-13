@@ -9,7 +9,8 @@ define(function (require, exports, module) {
 	'use strict';
 
 	// external
-	var _ = require('lodash');
+	var _ = require('lodash'),
+		$ = require('jquery');
 
 	/**
 	 * Retrieves the view object at a given index.
