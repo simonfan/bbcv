@@ -18,6 +18,10 @@ function (bbcv,  $      ,  Backbone ,  bbmv ) {
 
 
 	var extendedBbcv = bbcv.extend({
+
+
+		containerSelector: '.container',
+
 		collection       : collection,
 
 	//	modelView        : bbmv,
@@ -27,11 +31,11 @@ function (bbcv,  $      ,  Backbone ,  bbmv ) {
 					'<span data-bind-name="html">',
 						'<%= name %>',
 					'</span>',
-					'<input data-bind-name="value" value="<%= name %>" data-bind-on="keyup">',
+				//	'<input data-bind-name="value" value="<%= name %>" data-bind-on="keyup">',
 				'</div>',
 				'<div class="col-md-3">',
-					'<span data-bind-last-name="html"></span>',
-					'<input data-bind-last-name="value" data-bind-on="keyup">',
+					'<span data-bind-last-name="html"><%= lastName %></span>',
+				//	'<input data-bind-last-name="value" value="<%= lastName %>" data-bind-on="keyup">',
 				'</div>',
 			'</div>'
 		].join(' ')
@@ -49,7 +53,16 @@ function (bbcv,  $      ,  Backbone ,  bbmv ) {
 
 		addPerson: function addPerson() {
 			// use toJSON method to pass only attributes.
-			collection.add(this.model.toJSON());
+
+			var at = this.model.get('at');
+
+			if (!_.isUndefined(at)) {
+				at = parseInt(at);
+			}
+
+			collection.add(this.model.toJSON(), {
+				at: at
+			});
 
 			// clear model
 			this.model.clear();

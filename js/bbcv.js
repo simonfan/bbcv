@@ -41,6 +41,7 @@ define(function (require, exports, module) {
 				'modelView',
 				'collection',
 				'parseModelHtmlTemplateData',
+				'containerSelector'
 			], function (opt) {
 
 				this[opt] = options[opt] || this[opt];
@@ -69,9 +70,12 @@ define(function (require, exports, module) {
 				};
 			}
 
+			// find the right $container element
+			// defaults to the $el of the view.
+			this.$container = this.containerSelector ? this.$el.find(this.containerSelector) : this.$el;
 
 
-			// views by index
+			// array property at which modelViews are stored by index
 			this.modelViews = [];
 
 			// Make sure there is a collection

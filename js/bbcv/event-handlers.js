@@ -44,7 +44,7 @@ define(function (require, exports, module) {
 	exports.handleReset = function handleReset(collection, options) {
 
 		// This is just to be faster: remove everything at once!
-		this.$el.html('');
+		this.$container.html('');
 
 		collection.each(this.handleRemove);
 

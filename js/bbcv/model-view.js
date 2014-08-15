@@ -84,19 +84,26 @@ define(function (require, exports, module) {
 	 * @param  {[type]} index [description]
 	 * @return {[type]}       [description]
 	 */
-	function _modelElAdd($el, index, cview) {
+	function _modelElAdd($modelEl, index, cview) {
 		// get the view that represents the model before cview one.
 		var viewBefore = cview.getModelViewAt(index - 1);
 
 		if (viewBefore) {
 			// if htere is a view before,
 			// insert cview.$el after that view's $el
-			return $el.insertAfter(viewBefore.$el);
+			return $modelEl.insertAfter(viewBefore.$el);
 
 		} else {
-			// otherwise, the collectionView is still empty,
-			// thus just append to the container
-			return $el.appendTo(cview.$el);
+			// otherwise, the collectionView is
+			// either empty or the index === 0
+
+			if (index === 0 || index === '0') {
+				// just prepend
+				return $modelEl.prependTo(cview.$container);
+			} else {
+				// just append to the container
+				return $modelEl.appendTo(cview.$container);
+			}
 		}
 	}
 
@@ -110,19 +117,19 @@ define(function (require, exports, module) {
 
 		// [1] render the template
 		//     and get the $el.
-		var html = _.isFunction(this.modelHtml) ? this.modelHtml(model) : this.modelHtml,
-			$el  = $(html);
+		var html     = _.isFunction(this.modelHtml) ? this.modelHtml(model) : this.modelHtml,
+			$modelEl = $(html);
 
 		// [2] get index
 		var index = this.collection.indexOf(model);
 
 		// [3] place
-		_modelElAdd($el, index, this);
+		_modelElAdd($modelEl, index, this);
 
 		// [4] build the view
 		// [4.1] build view options
 		var viewOptions = {
-			el             : $el,
+			el             : $modelEl,
 			model          : model,
 			index          : index,
 			collection     : this.collection,
