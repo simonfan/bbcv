@@ -1,3 +1,4 @@
+define("bb-rendered-view",["require","exports","module","lowercase-backbone","lodash"],function(e,t,a){var i=e("lowercase-backbone").view,r=e("lodash"),l=i.prototype.initialize,s=i.extend({initialize:function(e){l.apply(this,r.toArray(arguments)),r.each(["template","templateCompiler","templateDataDefaults","templateDataParse","render"],function(t){this[t]=e[t]||this[t]},this),this.render(e)},templateCompiler:r.template,template:void 0,templateDataDefaults:{},templateDataParse:function(e){return r.assign({},this.templateDataDefaults,e)},render:function(e){var t,a=this.template;if(a){var i=this.templateDataParse(e);r.isFunction(a)?t=a(i):r.isString(a)&&(t=this.templateCompiler(a)(i)),this.$el.html(t)}return this}});a.exports=s});
 /**
  * Proxies methods to the collection, if it is present.
  *
@@ -271,10 +272,10 @@ define('bbcv/model-view',['require','exports','module','lodash','jquery'],functi
  * @module bbcv
  */
 
-define('bbcv',['require','exports','module','bbdv','lodash','lowercase-backbone','bbcv/iterators','bbcv/event-handlers','bbcv/model-view'],function (require, exports, module) {
+define('bbcv',['require','exports','module','bb-rendered-view','lodash','lowercase-backbone','bbcv/iterators','bbcv/event-handlers','bbcv/model-view'],function (require, exports, module) {
 	
 
-	var view = require('bbdv'),
+	var view = require('bb-rendered-view'),
 		_    = require('lodash');
 
 	var _init = view.prototype.initialize;

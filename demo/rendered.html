@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>main</title>
+
+	<script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+	<script type="text/javascript">
+
+		// load amdconfig manually
+		require(['../amdconfig'], function(undef) {
+			// load demo
+			require(['../demo/main'], function() {
+
+				console.log('main demo successfully loaded and ran.');
+
+			});
+		});
+
+	</script>
+
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+
+</head>
+
+<body>
+
+	<a href="../index.html">Menu</a>
+
+	<div id="collection" class="container-fluid">
+
+		<div style="background-color: red; height: 100px;"></div>
+
+		<div class="container"></div>
+	</div>
+
+
+	<div id="adder">
+		<input type="text" data-bind-name="value" data-binding-event="keyup" placeholder="name">
+		<input type="text" data-bind-last-name="value" data-binding-event="keyup" placeholder="lastName">
+		<input type="text" data-bind-at="value" data-binding-event="keyup" placeholder="at">
+		<button data-bind-event-click="addPerson">ADD</button>
+	</div>
+
+</body>
+
+</html>

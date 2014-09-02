@@ -1,26 +1,25 @@
 {
-  "name": "bbcv",
-  "main": "built/bbcv.js",
-  "version": "0.8.14",
-  "description": "Some module...",
-  "dependencies": {
-    "jquery": "~2.1.1",
-    "lowercase-backbone": "0.3.8",
-    "lodash": "~2.4.1",
-    "bbdv": "0.6.9"
-  },
-  "devDependencies": {
-    "requirejs": "*",
-    "requirejs-text": "*",
-    "underscore": "*",
-    "jquery": "*",
-    "qunit": "*",
-    "q": "1.0.1",
-    "bootstrap": "~3.2.0",
-    "bbmv": "0.14.18"
-  },
-  "resolutions": {
-    "lowercase-backbone": "0.3.8",
-    "bbdv": "0.6.9"
-  }
+	"name": "bbcv",
+	"main": "built/bbcv.js",
+	"version": "0.8.15",
+	"description": "Some module...",
+	"dependencies": {
+		"jquery": "~2.1.1",
+		"lowercase-backbone": "0.3.8",
+		"lodash": "~2.4.1",
+		"bb-rendered-view": "~0.1.0"
+	},
+	"devDependencies": {
+		"requirejs": "*",
+		"requirejs-text": "*",
+		"underscore": "*",
+		"jquery": "*",
+		"qunit": "*",
+		"q": "1.0.1",
+		"bootstrap": "~3.2.0",
+		"bbmv": "0.14.18"
+	},
+	"resolutions": {
+		"lowercase-backbone": "0.3.8"
+	}
 }

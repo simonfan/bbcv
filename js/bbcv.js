@@ -11,7 +11,7 @@
 define(function (require, exports, module) {
 	'use strict';
 
-	var view = require('bbdv'),
+	var view = require('bb-rendered-view'),
 		_    = require('lodash');
 
 	var _init = view.prototype.initialize;

@@ -19,6 +19,8 @@ function (bbcv,  $      ,  Backbone ,  bbmv ) {
 
 	var extendedBbcv = bbcv.extend({
 
+		template: '<div style="width: 300px; background-color: red;"><div class="container"></div></div>',
+
 
 		containerSelector: '.container',
 
