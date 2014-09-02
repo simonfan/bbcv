@@ -271,10 +271,10 @@ define('bbcv/model-view',['require','exports','module','lodash','jquery'],functi
  * @module bbcv
  */
 
-define('bbcv',['require','exports','module','lowercase-backbone','lodash','lowercase-backbone','bbcv/iterators','bbcv/event-handlers','bbcv/model-view'],function (require, exports, module) {
+define('bbcv',['require','exports','module','bbdv','lodash','lowercase-backbone','bbcv/iterators','bbcv/event-handlers','bbcv/model-view'],function (require, exports, module) {
 	
 
-	var view = require('lowercase-backbone').view,
+	var view = require('bbdv'),
 		_    = require('lodash');
 
 	var _init = view.prototype.initialize;

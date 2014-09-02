@@ -11,7 +11,7 @@
 define(function (require, exports, module) {
 	'use strict';
 
-	var view = require('lowercase-backbone').view,
+	var view = require('bbdv'),
 		_    = require('lodash');
 
 	var _init = view.prototype.initialize;

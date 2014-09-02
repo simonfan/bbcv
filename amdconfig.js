@@ -21,7 +21,8 @@ require.config({
 		subject: '../bower_components/subject/built/subject',
 		underscore: '../bower_components/underscore/underscore',
 		q: '../bower_components/q/q',
-		bootstrap: '../bower_components/bootstrap/dist/js/bootstrap'
+		bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
+		'bb-rendered-view': '../bower_components/bb-rendered-view/built/bb-rendered-view'
 	},
 	shim: {
 		backbone: {
